@@ -1,0 +1,13 @@
+Sample Package Version: v1.0
+
+After you unzip the problem package, you need to give the folder a proper name.
+
+If this is the directory you obtain:
+
+skeleton/data/...
+        /gen/...
+        /input_format_validators/...
+        ...
+             
+You should call "verifyproblem skeleton" to verify the package.
+Replace "skeleton" by your own problem id.

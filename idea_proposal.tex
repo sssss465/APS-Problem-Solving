@@ -1,0 +1,72 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[american]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+\usepackage{booktabs}  
+\usepackage{graphicx} 
+\usepackage{listings}
+\lstset{%
+backgroundcolor=\color{cyan!10},
+basicstyle=\ttfamily,
+numbers=left,numberstyle=\scriptsize
+}
+\usepackage{hyperref}
+
+\title{Simple Max (title of the proposed problem)}
+\author{Team Member 1 (netId) \\
+Team Member 2 (netId) \\
+Team Member 3 (netId)}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+
+Provide a brief description for the problem.
+Please clearly state the range of variables.
+Describe your idea precisely and concisely.
+Avoid ambiguity.
+For example,
+
+Given an array with $n$ ($1 \leq n \leq 10^5$) integers, find the maximum value among the integers.
+Integers in the array are no larger than $10^9$ in their absolute values.
+
+
+\section{Solutions}
+
+Describe your intended solution(s) to this problem and its(their) time complexity.
+For example,
+
+\begin{itemize}
+    \item Perform a linear scan to find the maximum value.
+Time complexity is $O(n)$.
+    \item Use divide-and-conquer to split the array into two equal halves. Find the maximum in each half and take the larger among the two halves during a merge. Time complexity is $T(n) = 2T(n/2) + O(1) = O(n)$. (an overkill and awkward solution).
+\end{itemize}
+
+
+\section{Anti-Solutions}
+
+Describe some anti-solution(s) that people may try and briefly explain why they will fail.
+For example,
+
+\begin{itemize}
+    \item A WA solution may initialize the answer to zero, and is thus unable to find a negative maximum.
+    \item An RTE solution may have off-by-one error. (This is only an example! Try to find a more meaningful anti-solution.)
+\end{itemize}
+
+\section{Test Case Design}
+
+Provide a plan for test case generation.
+For example,
+
+\begin{itemize}
+    \item Three cases are generated randomly
+    \item One case contains only negative numbers
+    \item One case contains only zeroes
+\end{itemize}
+
+A total of $5$ secret cases will be generated.
+
+\end{document}

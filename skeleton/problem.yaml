@@ -1,0 +1,7 @@
+limits:
+  time_multiplier: 2
+  time_safety_margin: 2
+
+# Uncomment the below if you need floating point tolerance
+# validation: default
+# validator_flags: float_tolerance 1e-6
