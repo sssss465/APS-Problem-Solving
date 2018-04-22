@@ -41,10 +41,10 @@ There are several ways to solve this problem, ranging to naive to slightly more 
 For example,
 
 \begin{itemize}
-    \item Naively perform dfs on every spot and record the furthest distance reached
+    \item Naively perform dfs on every spot and record the furthest distance reached. \\
 Time complexity is $O((nm)^2)$.
     \item Use dynamic programming to consider a cell up to $i , j$ and whether or not taking a step in any valid direction would add to the  distance. So the state would be current distance, $i, j$. $O(mn)$
-    \item Find a topological sort and find the length of the longest sublength $O(mn)$
+    \item Find a topological sort and find the length of the longest sub-length. $O(mn)$
 \end{itemize}
 
 
