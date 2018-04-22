@@ -6,6 +6,7 @@
 \usepackage{booktabs}  
 \usepackage{graphicx} 
 \usepackage{listings}
+
 \lstset{%
 backgroundcolor=\color{cyan!10},
 basicstyle=\ttfamily,
@@ -24,11 +25,98 @@ Titas Geryba(tg1404)}
 
 \section{Problem Description}
 
-John is an Olympic Skier. In order to maximize his fun on a given slope, he wants to find the longest path down the slope and has decided to maximize his distance down the hill. Help John find the longest decreasing path from the mountain down the hill. 
+Description: John is an Olympic Skier. He is currently preparing for a competition at a skiing resort and wants to maximize his efficiency of training. He gets his hands on a an altitude mapping of the local mountains represented as a grid of altitudes. Given this mapping, he wants to know what is the longest descent of negative slope that he could achieve. Since these paths are not official slopes, John would like a set of directions that would allow him to find his way along the longest path of descent. John also loves admiring the views from high altitudes, so if more than one longest descent exists, he would like to choose one that starts at the highest point possible.
 
-Input: You are given $n, m (1 \leq n, m \leq 1000)$ and then you are given $n $ rows and $m$ columns of numbers. 
+\vspace{3mm}
 
-Output: The length of the longest path.
+Input: On the first line are specified the values $n, m (1 \leq n, m \leq 1000)$. Each of the next $n$ lines has $m$ integers describing the altitudes $a_{ij} (1 \leq a_{ij} \leq 10000)$ in one row of the grid. 
+
+\vspace{3mm}
+
+Output: On the first line output the starting position of the descent (the point $(y, x)$ where the top left corner of the array is $(1, 1)$, $x$ increases rightwards and $y$ increases downwards). On the following line output a sequence of letters that describe the direction John should take to go from the starting position to the ending position of the path. For each direction output $N, E, W, S$ for North, East, West and South respectively. If there are multiple starting coordinates for the path of maximal length, choose the one that starts at the highest point, the input will guarantee that only one such point exists. If there are multiple paths of maximal length from the highest point found, output the directions that would yield the lowest lexicographical ordering. 
+
+
+\newpage
+
+\noindent \textbf{Example 1}:
+
+\vspace{2mm}
+
+
+\noindent 
+Input:
+ \begin{lstling} 
+ \\
+2 4 \\
+1 2 3 4 \\
+1 1 1 8 
+\end{lstling} 
+
+\vspace{2mm}
+
+\noindent Output:\\
+ \begin{lstling} 
+(2,4)\\
+NWWW
+\end{lstling} 
+
+\vspace{6mm}
+
+\noindent \textbf{Example 2}:
+
+\vspace{2mm}
+
+
+\noindent 
+Input:
+ \begin{lstling} 
+ \\
+2 2 \\
+0 3 \\
+4 0
+\end{lstling} 
+
+\vspace{2mm}
+
+\noindent Output:\\
+ \begin{lstling} 
+(2,1) \\
+E
+\end{lstling} 
+
+\vspace{6mm}
+
+\noindent \textbf{Example 3}:
+
+\vspace{2mm}
+
+
+\noindent 
+Input:
+ \begin{lstling} 
+ \\
+1 9 \\
+1 \\
+2 \\
+3 \\
+4 \\
+5 \\
+4 \\
+3 \\
+2 \\
+1 
+\end{lstling} 
+
+\vspace{2mm}
+
+\noindent Output:\\
+ \begin{lstling} 
+(5,1) \\
+NNNN
+\end{lstling} 
+
+\newpage
+
 
 %Given an array with $n$ ($1 \leq n \leq 10^5$) integers, find the maximum value among the integers.
 %Integers in the array are no larger than $10^9$ in their absolute values.
@@ -41,9 +129,13 @@ There are several ways to solve this problem, ranging to naive to slightly more 
 For example,
 
 \begin{itemize}
-    \item Naively perform dfs on every spot and record the furthest distance reached. \\
+    \item Naively perform dfs on every spot and record the furthest distance reached while storing the longest path(s) in some data structure. \\
 Time complexity is $O((nm)^2)$.
-    \item Use dynamic programming to consider a cell up to $i , j$ and whether or not taking a step in any valid direction would add to the  distance. So the state would be current distance, $i, j$. $O(mn)$
+
+    \item Use dynamic programming to consider a cell up to $i , j$ and whether or not taking a step in any valid direction would add to the  distance. So the state would be current distance, $i, j$. To retrieve the path, at every location we store the neighbor that will yield the longest path. If there are neighbors that that can be taken to achieve maximal length, we store the one that will yield smaller lexicographical order. Once we know the distance of the longest path $L$, we retrieve the point on the grid that has a length of this size and go from stored neighbor to the following stored neighbor for $L$ steps, each time printing out the direction taken.
+
+Time complexity is $O(nm)$.
+
     \item Find a topological sort and find the length of the longest sub-length. $O(mn)$
 \end{itemize}
 
@@ -56,7 +148,20 @@ Time complexity is $O((nm)^2)$.
 Some common pitfalls are: 
 
 \begin{itemize}
-    \item One may think that the length of the longest path may simply be the furthest DFS traversal from the highest point, that may not be true because it may be surrounded by barriers (values larger than it). 
+    \item WA - One may think that the length of the longest path may simply be the furthest DFS traversal from the highest point, that may not be true because it may achieve a very low altitude very quickly. For example:
+    \begin{center}
+     \begin{lstling} 
+        \\
+        1 5 4\\
+        9 1 3 \\
+        1 1 2 \\
+        \end{lstling} 
+    \end{center}
+    starting at altitude $9$ the longest path is of length 2. But starting at altitude $5$ we achieve a longest path of length $5$.
+    \item WA - One may make a simple coding error or a conceptual error in trying to store neighbors by lexicographical order.
+    \item RTE - Out of bounds due to not treating neighbors on the boundary of the matrix effectively
+    \item TLE - If you use the naive algorithm, there is no way a $1000$ by $1000$ grid can be dealth with.
+    
 \end{itemize}
 
 \section{Test Case Design}
@@ -65,12 +170,13 @@ Some common pitfalls are:
 Ideas for test case generation.\\
 \begin{itemize}
     \item Three cases are generated randomly
-    \item One case contains only negative numbers
-    \item One case contains only zeroes
+    \item One case contains only ones
+    \item One case that starts with a common point and branches off into many directions, all yielding paths of the same length.
     \item One case with one peak and valleys
+    \item One case where the path is of length $nm$.
     \item Randomly generated 2D Perlin noise
 \end{itemize}
 
-A total of $7$ secret cases will be generated.
+A total of $8$ secret cases will be generated.
 
 \end{document}
