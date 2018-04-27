@@ -129,7 +129,7 @@ public class Hilldescent {
         System.out.print(sb.toString());
 
     }
-    void findstart(){
+    public static void findStart(){
         for (int i = 1; i <= n; i++)
         {
             for (int j = 1; j <= m; j++)
@@ -153,8 +153,16 @@ public class Hilldescent {
         m = fr.nextInt();
         for (int i = 1; i <= n; i++){
             for (int j = 1; j <= m; j++){
-                
+                grid[i][j] = fr.nextInt();
             }
+        }
+        if (maximum > 1){
+            findStart();
+            System.out.println(maximum);
+            System.out.println(max_start[0] + " " + max_start[1]);
+            printPath();
+        } else {
+            System.out.println("no descent");
         }
 
     }
