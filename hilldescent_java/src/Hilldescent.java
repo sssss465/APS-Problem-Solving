@@ -125,8 +125,10 @@ public class Hilldescent {
             } else if (dir == 'N'){
                 p[0]--;
             }
+            dir = neighbor[p[0]][p[1]];
+            if (dir == 0) break;
         }
-        System.out.print(sb.toString());
+        System.out.println(sb.toString());
 
     }
     public static void findStart(){
@@ -154,6 +156,11 @@ public class Hilldescent {
         for (int i = 1; i <= n; i++){
             for (int j = 1; j <= m; j++){
                 grid[i][j] = fr.nextInt();
+            }
+        }
+        for (int i = 1; i <= n; i++){
+            for (int j = 1; j <= m; j++){
+               solve(i,j);
             }
         }
         if (maximum > 1){
