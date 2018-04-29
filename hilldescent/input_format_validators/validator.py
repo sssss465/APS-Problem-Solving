@@ -4,20 +4,38 @@ import sys, re
 
 n_line = sys.stdin.readline()
 
-if re.match('^[1-9]\d*$', n_line) == None:
+
+
+if re.match('^[1-9]\d*\s[1-9]\d*$', n_line) == None:
   sys.exit(1) # invalid n
 
-n = int(n_line)
+n_line = n_line.split(' ')
+n = int(n_line[0])
+m = int(n_line[1])
 
-nums_line = sys.stdin.readline()
-# Here we match n integers. An integer must not have leading zero.
-if re.match('^(0|-?[1-9]\d*)( (0|-?[1-9]\d*)){%d,%d}$' % (n-1, n-1), nums_line) == None:
-  sys.exit(2) # invalid numbers
+if (n < 0 or m < 0 or m > 1000 or n > 1000):
+  sys.exit(2) # invalid m or n value.
 
-nums = [int(x) for x in nums_line.split(' ')]
 
-if max(nums) > 100 or min(nums) < -100:
-  sys.exit(3) # numbers out of range
+
+
+for i in range(n):
+  line = sys.stdin.readline().split(" ")
+  if len(line) != m:
+    sys.exit(3) #invalid line length
+  for j in range(m):
+    if (j == m-1):
+      if re.match('^[0-9]\d*$', line[j]) == None:
+        sys.exit(6) #invalid input format for the last int of a certain row
+    else:
+      if re.match('^[0-9]\d*', line[j]) == None:
+        sys.exit(4) #invalid input format for a single int.
+    if int(line[j]) > 1000000 or int(line[j]) < 0:
+      sys.exit(5) # invalid range for a[i][j]
+
+line = sys.stdin.readline()
+if len(line) > 0:
+  sys.exit(7) # last line is not empty
 
 # an input validator must exit with code 42 to for success
 sys.exit(42)
