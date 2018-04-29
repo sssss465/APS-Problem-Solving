@@ -140,9 +140,10 @@ public class Hilldescent {
                 {
                     int row = max_start[0];
                     int col = max_start[1];
-                    if (grid[i][j] > grid[row][col])
+                    if (grid[i][j] > grid[row][col]) {
                         max_start[0] = i;
                         max_start[1] = j;
+                    }
                 }
             }
         }
@@ -156,6 +157,11 @@ public class Hilldescent {
         for (int i = 1; i <= n; i++){
             for (int j = 1; j <= m; j++){
                 grid[i][j] = fr.nextInt();
+            }
+        }
+        for (int i = 1; i <= n; i++){
+            for (int j = 1; j <= m; j++){
+                System.out.println(grid[i][j]);
             }
         }
         for (int i = 1; i <= n; i++){
