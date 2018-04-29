@@ -1,4 +1,4 @@
-# This is a python2 validator
+# This is a python3 validator
 
 import sys, re
 
