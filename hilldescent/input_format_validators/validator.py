@@ -25,10 +25,10 @@ for i in range(n):
     sys.exit(3) #invalid line length
   for j in range(m):
     if (j == m-1):
-      if re.match('^[0-9]\d*$', line[j]) == None:
+      if re.match('^0\s|^[1-9]\d*$', line[j]) == None:
         sys.exit(6) #invalid input format for the last int of a certain row
     else:
-      if re.match('^[0-9]\d*', line[j]) == None:
+      if re.match('^0\s|^[1-9]\d*$', line[j]) == None:
         sys.exit(4) #invalid input format for a single int.
     if int(line[j]) > 1000000 or int(line[j]) < 0:
       sys.exit(5) # invalid range for a[i][j]
@@ -38,4 +38,5 @@ if len(line) > 0:
   sys.exit(7) # last line is not empty
 
 # an input validator must exit with code 42 to for success
+print("s")
 sys.exit(42)
