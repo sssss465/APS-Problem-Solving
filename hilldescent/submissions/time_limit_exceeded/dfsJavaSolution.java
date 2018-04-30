@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class dfsJavaSolution {
     public static class HillDescent {
         private static int maxPathX = Integer.MAX_VALUE, maxPathY = Integer.MAX_VALUE;
         private static int maxAltitude = Integer.MIN_VALUE;
