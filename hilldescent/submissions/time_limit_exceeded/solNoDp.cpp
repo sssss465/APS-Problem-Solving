@@ -140,7 +140,7 @@ int main()
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
-            scanf("%d", &grid[i][j]);
+           cin >> grid[i][j];
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
             solve(i, j);

@@ -22,6 +22,8 @@ typedef long long int ll;
 #define MAX_LL 9223372036854775807ll
 #define MAX_INT 2147483647
 
+// FAILS DUE TO OUTPUTTING THE ANSWER TOO SLOWLY
+
 int grid[MAXN][MAXM]; // Where the grid is stored
 int n, m;             // size of grid
 
@@ -110,7 +112,7 @@ void printPath()
             p = make_pair(p.first - 1, p.second);
         dir = neighbor[p.first][p.second];
     }
-    printf("%s\n", str.c_str());
+    cout << str << endl;
 }
 
 void findStart() // Finds the tallest starting point with the longest path.
@@ -141,7 +143,7 @@ int main()
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
-            scanf("%d", &grid[i][j]);
+            cin >> grid[i][j];
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
             solve(i, j);
