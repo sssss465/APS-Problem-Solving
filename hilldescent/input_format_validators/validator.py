@@ -20,20 +20,27 @@ if (n < 0 or m < 0 or m > 1000 or n > 1000):
 for i in range(n):
   line = sys.stdin.readline().split(" ")
   if len(line) != m:
+    # print("invalid length")
     sys.exit(3) #invalid line length
   for j in range(m):
     if (j == m-1):
-      if re.match('^0\s|^[1-9]\d*$', line[j]) == None:
+      if re.match('^0(?!.)|^[1-9]\d*$', line[j]) == None:
+        # print("last line incorrect")
         sys.exit(6) #invalid input format for the last int of a certain row
+        
     else:
-      if re.match('^0$|^[1-9]\d*$', line[j]) == None:
+      if re.match('^0(?!.)|^[1-9]\d*', line[j]) == None:
+        # print("line", i, "incorrect")
         sys.exit(4) #invalid input format for a single int.
     if int(line[j]) > 1000000 or int(line[j]) < 0:
+      # print("a[i][j] has bad value")
       sys.exit(5) # invalid range for a[i][j]
 
 line = sys.stdin.readline()
 if len(line) > 0:
+  # print("Last line is not empty")
   sys.exit(7) # last line is not empty
 
 # an input validator must exit with code 42 to for success
+# print("SUCCESS")
 sys.exit(42)
