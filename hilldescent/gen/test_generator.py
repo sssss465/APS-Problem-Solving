@@ -117,7 +117,7 @@ class TestGenerator(object):
 		n = len(grid)
 		m = len(grid[0])
 
-		with open( str(self.output_file_no) + ".in", 'w') as f:
+		with open( str(self.output_file_no) + ".in", 'w', newline='\n') as f:
 			f.write( str(n) + " " + str(m) + "\n" )
 			for i in range(n):
 				for j in range(m):
