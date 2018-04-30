@@ -14,103 +14,103 @@ class TestGenerator(object):
 
 		# SAMPLE CASES
 
-		sample_test_1 = [[1, 2, 3, 4], [1, 1, 1, 8]]
-		sample_test_2 = [[0, 3], [4, 0]]
-		sample_test_3 = [[1], [2], [3], [4], [5], [4], [3], [2], [1]]
+		# sample_test_1 = [[1, 2, 3, 4], [1, 1, 1, 8]]
+		# sample_test_2 = [[0, 3], [4, 0]]
+		# sample_test_3 = [[1], [2], [3], [4], [5], [4], [3], [2], [1]]
 
-		self.output_to_file( sample_test_1 )
-		self.output_to_file( sample_test_2 )
-		self.output_to_file( sample_test_3 )
+		# self.output_to_file( sample_test_1 )
+		# self.output_to_file( sample_test_2 )
+		# self.output_to_file( sample_test_3 )
 
 		# AUTOMATICALLY GENERATED CASES
 
 		# Generate small gradient terrain with small max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=4) )
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 1), frequency=4) )
 
-		# # Generate small gradient terrain with large max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=4) )
+		# Generate small gradient terrain with large max altitude.
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(30, 30, max_altitude = pow(10, 4), frequency=4) )
 
-		# # Generate medium gradient terrain with small max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=4) )
+		# Generate medium gradient terrain with small max altitude.
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 2), frequency=4) )
 
-		# # Generate medium gradient terrain with large max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=4) )
+		# Generate medium gradient terrain with large max altitude.
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(100, 100, max_altitude = pow(10, 5), frequency=4) )
 
 
-		# # Generate large gradient terrain with small max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=4) )
+		# Generate large gradient terrain with small max altitude.
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 3), frequency=4) )
 
-		# # Generate large gradient terrain with large max altitude.
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=64) )
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=16) )
-		# self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=4) )
+		# Generate large gradient terrain with large max altitude.
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=64) )
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=16) )
+		self.output_to_file( self.generate_gradient_terrain(1000, 1000, max_altitude = pow(10, 6), frequency=4) )
 
-		# # Generate random extra-small square and rectangle terrains.
-		# self.output_to_file( self.generate_random_terrain(1, 1) )
-		# self.output_to_file( self.generate_random_terrain(2, 2) )
-		# self.output_to_file( self.generate_random_terrain(3, 3) )
-		# self.output_to_file( self.generate_random_terrain(2, 1) )
-		# self.output_to_file( self.generate_random_terrain(1, 2) )
-		# self.output_to_file( self.generate_random_terrain(10, 1) )
-		# self.output_to_file( self.generate_random_terrain(1, 10) )
-		# self.output_to_file( self.generate_random_terrain(2, 10) )
-		# self.output_to_file( self.generate_random_terrain(10, 2) )
+		# Generate random extra-small square and rectangle terrains.
+		self.output_to_file( self.generate_random_terrain(1, 1) )
+		self.output_to_file( self.generate_random_terrain(2, 2) )
+		self.output_to_file( self.generate_random_terrain(3, 3) )
+		self.output_to_file( self.generate_random_terrain(2, 1) )
+		self.output_to_file( self.generate_random_terrain(1, 2) )
+		self.output_to_file( self.generate_random_terrain(10, 1) )
+		self.output_to_file( self.generate_random_terrain(1, 10) )
+		self.output_to_file( self.generate_random_terrain(2, 10) )
+		self.output_to_file( self.generate_random_terrain(10, 2) )
 
-		# # Generate random small square terrain.
-		# self.output_to_file( self.generate_random_terrain(30, 30) )
+		# Generate random small square terrain.
+		self.output_to_file( self.generate_random_terrain(30, 30) )
 
-		# # Generate random medium square terrain.
-		# self.output_to_file( self.generate_random_terrain(100, 100) )
+		# Generate random medium square terrain.
+		self.output_to_file( self.generate_random_terrain(100, 100) )
 
-		# # Generate random large square terrain.
-		# self.output_to_file( self.generate_random_terrain(1000, 1000) )
+		# Generate random large square terrain.
+		self.output_to_file( self.generate_random_terrain(1000, 1000) )
 
-		# # Generate small spiral terrain (always increasing).
-		# self.output_to_file( self.generate_spiral_terrain(30, 30) )
+		# Generate small spiral terrain (always increasing).
+		self.output_to_file( self.generate_spiral_terrain(30, 30) )
 
-		# # Generate large spiral terrain (always increasing -- answer should print 1,000,000 characters!)
-		# self.output_to_file( self.generate_spiral_terrain(1000, 1000) )
+		# Generate large spiral terrain (always increasing -- answer should print 1,000,000 characters!)
+		self.output_to_file( self.generate_spiral_terrain(1000, 1000) )
 
-		# # Generate small flat terrain
-		# self.output_to_file( self.generate_flat_terrain( 30, 30 ) )
+		# Generate small flat terrain
+		self.output_to_file( self.generate_flat_terrain( 30, 30 ) )
 
-		# # Generate large flat terrain
-		# self.output_to_file( self.generate_flat_terrain( 1000, 1000 ) )
+		# Generate large flat terrain
+		self.output_to_file( self.generate_flat_terrain( 1000, 1000 ) )
 
-		# # Generate large terrain with all same length longest paths.
-		# self.output_to_file( self.generate_flat_slope_terrain( 1000, 1000 ) )
+		# Generate large terrain with all same length longest paths.
+		self.output_to_file( self.generate_flat_slope_terrain( 1000, 1000 ) )
 
-		# # Generate small snail terrain from center.
-		# self.output_to_file( self.generate_snail_terrain(31, 31))
+		# Generate small snail terrain from center.
+		self.output_to_file( self.generate_snail_terrain(31, 31))
 
-		# # Generate large snail terrain from center.
-		# self.output_to_file( self.generate_snail_terrain(999, 999))
+		# Generate large snail terrain from center.
+		self.output_to_file( self.generate_snail_terrain(999, 999))
 
-		# # MANUALLY CONSTRUCTED CASES
+		# MANUALLY CONSTRUCTED CASES
 
-		# # Generate large gradient terrain with manually constructed longest path.
-		# self.output_to_file( self.generate_custom_terrain_1() )
+		# Generate large gradient terrain with manually constructed longest path.
+		self.output_to_file( self.generate_custom_terrain_1() )
 
-		# # Custom inputs
-		# self.output_to_file( self.generate_custom_terrain_2() )
-		# self.output_to_file( self.generate_custom_terrain_3() )
-		# self.output_to_file( self.generate_custom_terrain_4() )
-		# self.output_to_file( self.generate_custom_terrain_5() )
-		# self.output_to_file( self.generate_custom_terrain_6() )
-		# self.output_to_file( self.generate_custom_terrain_7() )
-		# self.output_to_file( self.generate_custom_terrain_8() )
-		# self.output_to_file( self.generate_custom_terrain_9() )
-		# self.output_to_file( self.generate_custom_terrain_10() )
+		# Custom inputs
+		self.output_to_file( self.generate_custom_terrain_2() )
+		self.output_to_file( self.generate_custom_terrain_3() )
+		self.output_to_file( self.generate_custom_terrain_4() )
+		self.output_to_file( self.generate_custom_terrain_5() )
+		self.output_to_file( self.generate_custom_terrain_6() )
+		self.output_to_file( self.generate_custom_terrain_7() )
+		self.output_to_file( self.generate_custom_terrain_8() )
+		self.output_to_file( self.generate_custom_terrain_9() )
+		self.output_to_file( self.generate_custom_terrain_10() )
 		
 	# Output to file.
 	def output_to_file(self, grid):
