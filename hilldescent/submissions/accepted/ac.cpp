@@ -101,7 +101,7 @@ void printPath()
     string str = "";
     for (int i = 0; i < maximum; i++)
     {
-        str += dir;
+        if (dir != 0) str += dir;
         if (dir == 'E')
             p = make_pair(p.first, p.second + 1);
         else if (dir == 'W')
