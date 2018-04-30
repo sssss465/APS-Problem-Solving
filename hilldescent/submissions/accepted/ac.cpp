@@ -112,7 +112,7 @@ void printPath()
             p = make_pair(p.first - 1, p.second);
         dir = neighbor[p.first][p.second];
     }
-    cout << str << endl;
+    cout << str << "\n";
 }
 
 void findStart() // Finds the tallest starting point with the longest path.
@@ -150,12 +150,12 @@ int main()
     if (maximum > 1)
     {
         findStart();
-        cout << max_start.first << " " << max_start.second << endl;
+        cout << max_start.first << " " << max_start.second << "\n";
         printPath();
     }
     else
     {
-        cout << "no descent" << endl;
+        cout << "no descent" << "\n";
     }
     // cout << clock() - start << endl;
 }
