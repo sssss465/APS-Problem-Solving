@@ -1,6 +1,16 @@
-Sample Case ID
+General Notes
+	Large inputs such as 1000x1000 will TLE for brute force DFS solutions.
+	Extra-small and rectangular inputs test off-by-one grid or directional errors.
+	Zig-Zag and Snail terrains are worse-case degenerate scenarios for DFS and other
+	non-optimal solutions as each vertex has multiple possible directions to branch off.
+	Flat terrain test for "no descent" case.
+	Flat sloped terrain tests for lexicographical order.
+	Procedural terrains tests based on simulated natural data.
+	Custom test cases and random cases test for correct 
+	starting point (highest altitude -- or if same, lower Y -- or if same, lower X)
+	and lexicographical order.
 
-Test Case ID
+Sample Case ID
 
 0 - 2: Generate small procedural terrain with small max altitude -- 30x30
 3 - 5: Generate small procedural terrain with large max altitude -- 30x30
@@ -19,4 +29,4 @@ Test Case ID
 34: Generate large flat sloped terrain (same length longest paths) -- 1000x1000
 35: Generate small snail terrain (increases outward from center spirally) -- 30x30
 36: Generate large snail terrain (increases outward from center spirally) -- 30x30
-37 - 46: Generate custom inputs -- various small testable sizes1
+37 - 46: Generate custom inputs -- various small testable sizes

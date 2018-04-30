@@ -14,13 +14,13 @@ class TestGenerator(object):
 
 		# SAMPLE CASES
 
-		sample_test_1 = [[1, 2, 3, 4], [1, 1, 1, 8]]
-		sample_test_2 = [[0, 3], [4, 0]]
-		sample_test_3 = [[1], [2], [3], [4], [5], [4], [3], [2], [1]]
+		# sample_test_1 = [[1, 2, 3, 4], [1, 1, 1, 8]]
+		# sample_test_2 = [[0, 3], [4, 0]]
+		# sample_test_3 = [[1], [2], [3], [4], [5], [4], [3], [2], [1]]
 
-		self.output_to_file( sample_test_1 )
-		self.output_to_file( sample_test_2 )
-		self.output_to_file( sample_test_3 )
+		# self.output_to_file( sample_test_1 )
+		# self.output_to_file( sample_test_2 )
+		# self.output_to_file( sample_test_3 )
 
 		# AUTOMATICALLY GENERATED CASES
 
