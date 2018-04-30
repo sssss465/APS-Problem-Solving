@@ -22,9 +22,8 @@ typedef long long int ll;
 #define MAX_LL 9223372036854775807ll
 #define MAX_INT 2147483647
 
-int grid[MAXN][MAXM]; // Where the grid is stored
-int n, m;             // size of grid
-
+int grid[MAXN][MAXM];      // Where the grid is stored
+int n, m;                  // size of grid
 int dp[MAXN][MAXM];        // Here we store the length of the longest path to that gridpoint
 char neighbor[MAXN][MAXM]; // Here we store the next letter in the sequence.
 pair<int, int> max_start;  // The coordinate of the starting position.
@@ -99,7 +98,8 @@ void printPath()
     string str = "";
     for (int i = 0; i < maximum; i++)
     {
-        str += dir;
+        if (dir != 0)
+            str += dir;
         if (dir == 'E')
             p = make_pair(p.first, p.second + 1);
         else if (dir == 'W')
