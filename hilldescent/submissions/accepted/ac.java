@@ -140,9 +140,10 @@ public class Hilldescent {
                 {
                     int row = max_start[0];
                     int col = max_start[1];
-                    if (grid[i][j] > grid[row][col])
+                    if (grid[i][j] > grid[row][col]) {
                         max_start[0] = i;
                         max_start[1] = j;
+                    }
                 }
             }
         }
@@ -165,7 +166,7 @@ public class Hilldescent {
         }
         if (maximum > 1){
             findStart();
-            System.out.println(maximum);
+            //System.out.println(maximum);
             System.out.println(max_start[0] + " " + max_start[1]);
             printPath();
         } else {

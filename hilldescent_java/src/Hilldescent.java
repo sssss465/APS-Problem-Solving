@@ -161,17 +161,12 @@ public class Hilldescent {
         }
         for (int i = 1; i <= n; i++){
             for (int j = 1; j <= m; j++){
-                System.out.println(grid[i][j]);
-            }
-        }
-        for (int i = 1; i <= n; i++){
-            for (int j = 1; j <= m; j++){
                solve(i,j);
             }
         }
         if (maximum > 1){
             findStart();
-            System.out.println(maximum);
+            //System.out.println(maximum);
             System.out.println(max_start[0] + " " + max_start[1]);
             printPath();
         } else {
