@@ -1,4 +1,4 @@
-END=49
+END=46
 for ((i = 0; i <= END; i++)); do
-    java Hilldescent < $i.in > $i.ans
+    ./a.out < $i.in > $i.ans
 done 
